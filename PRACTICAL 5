@@ -1,0 +1,15 @@
+AIM:WAP to tokenization of given input.
+CODE:
+import nltk
+nltk.download()
+sent_data="You're braver than you belive. We devide a given text into differet a lines by using function"
+amol=nltk.sent_tokenize(sent_data)
+print(amol)
+
+2)Word tokenization:
+CODE:
+import nltk
+nltk.download()
+sent_data="You're braver than you belive. We devide a given text into differet a lines by using function"
+amol=nltk.word_tokenize(sent_data)
+print(amol)
