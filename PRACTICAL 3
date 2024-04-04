@@ -1,0 +1,92 @@
+AIM :  Design a program to accept the string that ending with 101.
+CODE :
+import java.util.Scanner;
+public class Design {
+    String str;
+    char b2;
+    int len;
+    int comp = 0;
+
+    void initial() {
+        System.out.println("Input strings of 1 and 0\n");
+        Scanner obj = new Scanner(System.in);
+        str = obj.nextLine();
+        len = str.length();
+        if (len > 0) {
+            for (int i = 0; i < str.length(); i++) {
+                char b1 = str.charAt(i);
+                if (b1 == '1' || b1 == '0') {
+                } else {
+                    System.out.println("Please provide a valid string");
+                    System.exit(0);
+                }
+            }
+            first();
+        }
+    }
+
+    void first() {
+        if (comp < len) {
+            char a1 = str.charAt(comp);
+            if (a1 == '1') {
+                comp++;
+                second();
+            } else {
+                comp++;
+                first();
+            }
+        } else {
+            System.out.println("Not a valid string");
+        }
+    }
+
+    void second() {
+        if (comp < len) {
+            char a1 = str.charAt(comp);
+            if (a1 == '0') {
+                comp++;
+                third();
+            } else {
+                comp++;
+                second();
+            }
+        } else {
+            System.out.println("Not a valid string.");
+        }
+    }
+
+    void third() {
+        if (comp < len) {
+            char a1 = str.charAt(comp);
+            if (a1 == '1') {
+                comp++;
+                last();
+            } else {
+                comp++;
+                first();
+            }
+        } else {
+            System.out.println("Not a valid string");
+        }
+    }
+
+    void last() {
+        if (comp < len) {
+            char a1 = str.charAt(comp);
+            if (a1 == '1') {
+                comp++;
+                second();
+            } else {
+                comp++;
+                third();
+            }
+        } else {
+            System.out.println("String will be accepted");
+            System.exit(0);
+        }
+    }
+    public static void main(String[] args) {
+        Design d1 = new Design();
+        d1.initial();
+    }
+}
